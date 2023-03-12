@@ -12,3 +12,18 @@
 
 
 目前测试用例很简单，逻辑不一定完备，待进一步测试实际使用中的效果。
+
+
+测试用例结果：
+``` bash
+>>>> test case no cycle <<<<
+find no cycle reference!
+
+
+>>>> test case has cycle <<<<
+cycle reference!  root.b.c.a = root type: <class '__main__.TestCls'> id: 2002894761792
+cycle reference!  root.b.c.b = root.b type: <class '__main__.TestCls'> id: 2002894761840
+cycle reference!  root.c.a = root type: <class '__main__.TestCls'> id: 2002894761792
+cycle reference!  root.c.b.c = root.c type: <class '__main__.TestCls'> id: 2002894761888
+```
+
