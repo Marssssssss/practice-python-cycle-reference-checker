@@ -27,3 +27,4 @@ cycle reference!  root.c.a = root type: <class '__main__.TestCls'> id: 200289476
 cycle reference!  root.c.b.c = root.c type: <class '__main__.TestCls'> id: 2002894761888
 ```
 
+拓展：可进一步参考 `objgragh` 的实现，看看它是怎么用 `gc` 的几个函数收集的循环引用，以及比较下用 `gc` 库比用`__dict__` 好在哪。
