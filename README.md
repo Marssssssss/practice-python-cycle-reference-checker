@@ -27,4 +27,8 @@ cycle reference!  root.c.a = root type: <class '__main__.TestCls'> id: 200289476
 cycle reference!  root.c.b.c = root.c type: <class '__main__.TestCls'> id: 2002894761888
 ```
 
-拓展：可进一步参考 `objgragh` 的实现，看看它是怎么用 `gc` 的几个函数收集的循环引用，以及比较下用 `gc` 库比用`__dict__` 好在哪。
+`objgraph` 的实现：
+
+
+- 算法整体思路类似，依靠 `gc.get_referrers` 获取引用（和 `__dict__` 的区别应该在弱引用上，待验证）；
+- 剔除了一些不需要关注的临时变量，比如 `get_chain` 这个函数逻辑使用到的 `queue` 局部变量，还有 `get_chain` 这个函数本身等等。
